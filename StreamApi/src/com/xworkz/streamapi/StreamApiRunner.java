@@ -51,7 +51,7 @@ public class StreamApiRunner {
 		List<String> str4 = strr4.filter((app) -> !app.contains(" ")).collect(Collectors.toList());
 
 		Stream<String> strr5 = list.stream();
-		List<String> str5 = strr5.filter((app) -> app.startsWith("A") || app.contains("B") || app.contains("C")
+		List<String> str5 = strr5.filter((app) -> app.contains("A") || app.contains("B") || app.contains("C")
 				|| app.contains("D") || app.contains("E") || app.contains("F") || app.contains("G") || app.contains("H")
 				|| app.contains("I") || app.contains("J") || app.contains("K") || app.contains("L") || app.contains("M")
 				|| app.contains("N") || app.contains("O") || app.contains("P") || app.contains("Q") || app.contains("R")
