@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Yoga</title>
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+ 
+ <link rel="stylesheet" href="index.css">
+ 
+ <script>
+   function register(){
+	   console.log("Calling register function");
+	   
+	   var regButton = document.getElementById("regButton");
+	   
+	   regButton.style.backgroundColor='green'
+	   regButton.style.color='white'
+	   
+	   var name = document.getElementById("name");
+	   console.log(name.value)
+	   
+	   var nameMessage=document.getElementById("nameMessage")
+	   nameMessage.innerHTML=''
+	   if(name.value==''){
+		   console.log("Please Enter Name")
+		   nameMessage.innerHTML="Please Enter Name"
+		   nameMessage.style.color='red'
+		   return false;
+	   }
+	   
+	  
+       var genderMessage = document.getElementById("genderMessage")
+       genderMessage.innerHTML=''
+
+       if(document.formName.gender[0].checked==false &&
+       document.formName.gender[1].checked==false &&
+       document.formName.gender[2].checked==false){
+           console.log("Please Enter Gender")
+           genderMessage.innerHTML="Please Select Gender"
+           genderMessage.style.color ='red'
+           return false;
+      
+       }
+
+       var genderData
+       if(document.formName.gender[0].checked==true){
+         console.log(genderData=document.formName.gender[0].value)
+       }
+       else if(document.formName.gender[1].checked==true){
+          console.log( genderData=document.formName.gender[1].value)
+       }
+       else if(document.formName.gender[2].checked==true){
+         console.log(genderData=document.formName.gender[2].value)
+         return false;
+       }
+       
+       
+       console.log(document.formName.city)
+       console.log(document.formName.city.value)
+
+
+        var cityMessage = document.getElementById("cityMessage")
+        cityMessage.innerHTML=''  
+       if(document.formName.city.value=='0'){
+           console.log("Please Enter City")
+          
+           cityMessage.innerHTML="Please select City"
+           cityMessage.style.color="red"
+           return false
+
+       }
+       
+       var emaile=document.getElementById("email")
+       var emailMessage=document.getElementById("emailMessage")
+      emailMessage. innerHTML=''
+               if(email.value==''){
+               console.log("Please Enter EmailId")
+              
+               emailMessage.innerHTML='Please Enter EmailId'  
+            	   emailMessage.style.color='red'
+               return false  
+               }
+       
+       var number=document.getElementById("number")
+       var numberMessage=document.getElementById("numberMessage")
+       numberMessage.innerHTML=''
+       if(number.value==''){
+         console.log("Please enter Mobile Number")
+        
+         numberMessage.innerHTML="Please enter Mobile Number"
+         numberMessage.style.color='red'
+         return false
+       }
+       
+       var ageMessage = document.getElementById("ageMessage")
+       ageMessage.innerHTML=''
+
+       if(document.formName.age[0].checked==false &&
+       document.formName.age[1].checked==false){
+           console.log("Please Enter Gender")
+           ageMessage.innerHTML="Please Select Gender"
+        	   ageMessage.style.color ='red'
+           return false;
+       
+       var genderData
+       if(document.formName.age[0].checked==true){
+         console.log(genderData=document.formName.age[0].value)
+       }
+       else if(document.formName.age[1].checked==true){
+          console.log( genderData=document.formName.age[1].value)
+          return false;
+       }
+       
+         
+       }
+       
+
+   }
+ </script>
+ 
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm "  id="yoga">
+  <a id=yogalink class="navbar-brand" href="#">Yoga</a>
+  <a id="yogaimg"><img src="https://static.wixstatic.com/media/d0f110_c52868ab62ab45278c13aa73b141c0fe~mv2.jpg/v1/crop/x_5,y_4,w_238,h_238/fill/w_90,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Samyak%20Yoga%20Logo%20-%20Insta_edited.jpg"></a>
+  
+  ...
+</nav>
+
+
+<p><b>TO Join With Us Fill The Form</b></p>
+
+<form action="send" name="formName" method="post">
+
+<div class="form-group">
+    <label for="firstName">Name</label>
+    <input type="text" class="form-control" placeholder="Enter Name" id="name" name="name">
+    <span id="nameMessage"></span>
+  </div>
+
+  
+  <div>
+        <label>Select Gender</label>
+        <input type = "radio" name="gender" value="male">Male
+        <input type = "radio" name = "gender" value="female">Female
+        <input type = "radio" name = "gender" value="other">Other
+       <span id="genderMessage"></span>
+    </div>
+    
+   <div> 
+            <label>Select-City</label>
+            <select name="city">
+                <option value="0">--selectCity--</option>
+                <option>Bangalore</option>
+                <option>Hassan</option>
+                <option>Mysore</option>
+            </select>
+            <span id="cityMessage"></span>
+        </div>
+		
+		<div>
+        <label>Select age</label>
+        <input type = "radio" name ="age" value="above 18">Above 18
+        <input type = "radio" name = "age" value="below 18">Below 18
+        <span id="ageMessage"></span>
+
+    </div>
+    
+     <div class="form-group">
+			<label>What Motivates You The Most?</label> <select name="motive">
+				<option value=0>--Select One--</option>
+				<option>Lose Weight</option>
+				<option>Improve Flexibility</option>
+				<option>Health & Recovery</option>
+				<option>Relieve Stress</option>
+				
+			</select> <span id="motivate message"></span>
+		</div>
+		
+		<div>
+        <label> Have you experienced Yoga Before</label>
+        <input type = "radio" name ="experience" value="beginer">beginer
+        <input type = "radio" name = "experienced" value="a little experience">a little experience
+        <input type = "radio" name = "experienced" value="intermediate">intermediate
+        <input type = "radio" name = "experienced" value="yoga guru">yoga guru
+
+    </div>
+    
+     <div class="form-group">
+    <label for="text">weight</label>
+    <input type="text" class="form-control" placeholder="Enter your current weight" id="weight" name="weight">
+  </div>
+  
+   <div class="form-group">
+    <label for="text">height</label>
+    <input type="text" class="form-control" placeholder="Enter your height" id="height" name="height">
+  </div>
+  
+   <div class="form-group">
+			<label>Choose type of Yoga</label> <select name="type">
+				<option value=0>--Select type--</option>
+				<option>KundaliYoga</option>
+				<option>Power Yoga</option>
+				<option>Pranayama</option>
+				<option>Anusara Yoga</option>
+				<option>RestorativeYoga</option>
+				<option>Yin Yoga</option>
+				
+			</select> <span id="type message"></span>
+		</div>
+	
+  
+    
+    
+    
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" placeholder="yoga@gmail.com" id="email" name="email">
+    <span id="emailMessage"></span>
+  </div>
+  <div class="form-group">
+    <label for="number">Contact Number</label>
+    <input type="number" class="form-control" placeholder="+91 8618075534" id="number" name="number">
+    <span id="numberMessage"></span>
+  </div>
+ 
+ 
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div>
+ <button type="submit" class="btn btn-success" onclick="register()" id="regButton">Submit</button>
+</form>
+
+</body>
+</html>

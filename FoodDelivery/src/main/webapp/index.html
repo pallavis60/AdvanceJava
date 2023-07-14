@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Food Delivery</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<style>
+.navbar-brand {
+	text-transform: uppercase;
+	padding-left: 600px;
+	color: white;
+}
+</style>
+
+<script>
+
+function register(){
+	console.log("Calling register function");
+	
+	var regButton = document.getElementById("regButton")
+    regButton.style.backgroundColor='red'
+    regButton.style.color='white'
+    
+    
+    	 var pizzaName = document.getElementById("PizzaName")
+         console.log(pizzaName.value)
+         var pizzaNameMessage = document.getElementById("pizzaNameMessage")
+         pizzaNameMessage.innerHTML=''
+         if(pizzaName.value==''){
+             console.log("Please Enter PizzaName")
+
+             pizzaNameMessage.innerHTML="Please Enter Pizza Name"
+
+            	 pizzaNameMessage.style.color='red'
+             return false
+         }
+	
+	
+
+    var typeMessage = document.getElementById("type message")
+    console.log(document.pizzaOrder.type.value)
+    typeMessage.innerHTML=''
+    if(document.pizzaOrder.type.value=='0'){
+        console.log("Please Select type")
+        typeMessage.innerHTML="Please Select type"
+        typeMessage.style.color="red"
+        return false; 
+
+    }
+    
+    var location=document.getElementById("location")
+    console.log(location.value)
+    var locationMessage= document.getElementById("locationMessage")
+    locationMessage.innerHTML=' '
+    if(location.value==''){
+    	console.log("Please enter location")
+    	
+    	locationMessage.innerHTML="PLease Enter location"
+    	locationMessage.style.color='red'
+    }
+    
+    
+    var paymodeMessage = document.getElementById("paymodeMessage")
+    console.log(document.pizzaOrder.paymentmode.value)
+    paymodeMessage.innerHTML=''
+    if(document.pizzaOrder.paymentmode.value=='0'){
+        console.log("Please Select paymentMode")
+        paymodeMessage.innerHTML="Please Select PaymentMode"
+        	paymodeMessage.style.color="red"
+        return false; 
+}
+}
+
+</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md bg-danger navbar-white">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#">Zomato</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	</nav>
+
+	<form action="send" name="pizzaOrder" method="post">
+
+
+		<div class="form-group">
+			<label for="text">PizzaName</label> <input type="text"
+				class="form-control" placeholder="Enter Pizza Name" id="PizzaName"
+				name="pizzaName"> <span id="pizzaNameMessage"></span>
+		</div>
+		<div class="form-group">
+			<label>Select type</label> <select name="type">
+				<option value=0>--Select type--</option>
+				<option>Pizza Margherita</option>
+				<option>Quick Tomato Pizza</option>
+				<option>Tandoori Paneer Pizza</option>
+				<option>Urrapam Pizza</option>
+				<option>Pizza in A Pan</option>
+			</select> <span id="type message"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="text">Location</label> <input type="text"
+				class="form-control" placeholder="Enter location" id="PizzaName"
+				name="location"> <span id="pizzaNameMessage"></span>
+		</div>
+
+		<div class="form-group">
+			<label>Payment Mode</label> <select name="paymentmode">
+				<option value='0'>--Select PaymentMode--</option>
+				<option>Cash On Delivery</option>
+				<option>UPI Mode</option>
+				<option>Debit Card</option>
+				<option>CreditCard</option>
+			</select> <span id="paymodeMessage"></span>
+		</div>
+
+
+		<button type="submit" onclick="register()" class="btn btn-danger"   
+			id="regButton">Submit</button>
+	</form>
+</body>
+</html>
