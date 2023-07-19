@@ -22,15 +22,15 @@ public class YogaServiceImpl implements YogaService {
 
 		if (violation.isEmpty()) {
 			System.out.println("no violation");
-			boolean save = repo.save(dto);
-			System.out.println(save);
-
+		boolean save=	repo.save(dto);
+		System.out.println(save);
+			
+			
 		} else {
 			System.out.println(violation);
 			return false;
 		}
-
-		return false;
+		return false;	
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class YogaServiceImpl implements YogaService {
 		if (name != null) {
 			boolean find = repo.findByName(name);
 			System.out.println(find);
-			return true;
+			
 		}
 		return false;
 	}

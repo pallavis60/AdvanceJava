@@ -13,7 +13,7 @@ import com.xworkz.yoga.dto.YogaDto;
 import com.xworkz.yoga.service.YogaService;
 import com.xworkz.yoga.service.YogaServiceImpl;
 
-@WebServlet(urlPatterns = "/send")
+@WebServlet(urlPatterns = "/send",loadOnStartup=2)
 public class YogaServlet extends HttpServlet {
 
 	public YogaServlet() {
@@ -42,13 +42,12 @@ public class YogaServlet extends HttpServlet {
 
 		YogaService service = new YogaServiceImpl();
 		//service.save(dto);
-		boolean find =service.findByName("Gowri");
-		System.out.println(find);
+		
 
 		resp.setContentType("text/HTML");
 		PrintWriter writer = resp.getWriter();
-		writer.println("<h1>  WELCOME             " + name + "</h1>");
-		writer.println("<h1>" +find+ "</h1>");
+		writer.println("<h1>    Welcome         "  +name+ "</h1>");
+		
 		
 
 	}

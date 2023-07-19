@@ -69,7 +69,7 @@ public class YogaRepositoryImpl implements YogaRepository {
 
 	@Override
 	public boolean findByName(String name) {
-
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -92,10 +92,13 @@ public class YogaRepositoryImpl implements YogaRepository {
 							+ "    " + set.getString(4) + "     " + set.getString(5) + "   " + set.getString(6)
 							+ "     " + set.getString(7) + "   " + set.getString(8) + "   " + set.getString(9) + "   "
 							+ set.getString(10) + "    " + set.getString(11));
-
+					       return true;
 					
-				}
-
+				} 
+				
+			}else {
+				System.out.println("name is not found");
+				return false;
 			}
 			
 			statment.close();
@@ -106,6 +109,8 @@ public class YogaRepositoryImpl implements YogaRepository {
 			e.printStackTrace();
 		}
 
+
+		
 		return false;
 	}
 

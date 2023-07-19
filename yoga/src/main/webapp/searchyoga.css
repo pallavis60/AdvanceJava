@@ -1,5 +1,3 @@
-@charset "ISO-8859-1";
-
 #yoga{
 	background-color: #800000;
 	
@@ -13,14 +11,8 @@
 	
 }
 
-#seacrh{
-	padding-left: 300px;
-	color: #80ff00;
-}
-
 
 body{
 	background-image: url("https://img.freepik.com/free-vector/silhouette-female-yoga-pose-against-mandala-design_1048-13082.jpg?w=740&t=st=1689084417~exp=1689085017~hmac=d116d8ba3b6a5efc776867480a4371300afeb1c27c035e3c24a3161d183f5700");
 }
-
 
