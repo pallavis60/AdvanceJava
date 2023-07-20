@@ -17,5 +17,6 @@ public interface OnlineShoppingService {
 	public boolean dalete(OnlineShoppingDto dto);
 
 	public boolean deleteById(int id);
+	
 
 }

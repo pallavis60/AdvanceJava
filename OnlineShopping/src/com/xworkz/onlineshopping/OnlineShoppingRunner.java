@@ -31,8 +31,8 @@ public class OnlineShoppingRunner {
 		// boolean dlt = service.dalete(dto2);
 		// System.out.println(dlt);
 
-		boolean delet = service.deleteById(3);
-		System.out.println(delet);
+		//boolean delet = service.deleteById(3);
+		//System.out.println(delet);
 
 		System.out.println("====================================================");
 

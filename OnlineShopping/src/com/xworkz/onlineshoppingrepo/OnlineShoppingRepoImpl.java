@@ -32,7 +32,6 @@ public class OnlineShoppingRepoImpl implements OnlineShoppingRepo {
 	@Override
 	public List<OnlineShoppingDto> readAll() {
 		Session session = fact.openSession();
-
 		Query quary = session.createQuery(" From OnlineShoppingDto");
 		List<OnlineShoppingDto> list = quary.list();
 		return list;

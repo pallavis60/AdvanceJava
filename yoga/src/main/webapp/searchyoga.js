@@ -11,11 +11,16 @@
 	   
 	   var nameMessage=document.getElementById("nameMessage")
 	   nameMessage.innerHTML=''
-	   if(name.value==''){
-		   console.log("Please Enter Name")
+	   if(name.value=='  '){
+		   alert("Please Enter Name")
 		   nameMessage.innerHTML="Please Enter Name"
 		   nameMessage.style.color='red'
 		   return false;
+	   }else{
+	   
+	   alert('Welcome to page')
+	//   window.location=
+	   
 	   }
 
 }
