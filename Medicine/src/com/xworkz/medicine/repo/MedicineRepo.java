@@ -17,4 +17,8 @@ public interface MedicineRepo {
     
     public List<MedicineDto> readAll();
 
+	public boolean  deleteByName(String name);
+
+	public boolean deleteByNameAndSideEffect(String name, String sideEffect);
+
 }

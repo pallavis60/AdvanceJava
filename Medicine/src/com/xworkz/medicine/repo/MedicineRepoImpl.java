@@ -76,4 +76,46 @@ public class MedicineRepoImpl implements MedicineRepo {
 
 	}
 
+	@Override
+	public boolean deleteByName(String name) {
+		Session session = fact.openSession();
+		Transaction trans = session.beginTransaction();
+		MedicineDto dto = findByName(name);
+		session.delete(dto);
+		trans.commit();
+		session.close();
+		System.out.println("Data is deleted");
+		return true;
+	}
+
+	@Override
+	public boolean deleteByNameAndSideEffect(String name, String sideEffect) {
+		Session session = fact.openSession();
+		Transaction trans = session.beginTransaction();
+		String query = "from MedicineDto where name= " + name;
+		Query<MedicineDto> query1 = session.createQuery(query, MedicineDto.class);
+
+		MedicineDto dto = query1.getSingleResult();
+
+		String query2 = "from MedicineDto where sideEffect= " + sideEffect;
+		Query<MedicineDto> query4 = session.createQuery(query2, MedicineDto.class);
+
+		MedicineDto dto1 = query4.getSingleResult();
+
+		if (dto.getSideEffect().equals(dto1.getSideEffect())) {
+			if (dto.getName().equals(dto1.getName())) {
+				session.delete(dto);
+				trans.commit();
+				session.close();
+				System.out.println("Data is deleted");
+				return true;
+			}
+
+			System.out.println("Data is not deleted");
+			return false;
+		}
+		System.out.println("Data is not deletd");
+		return false;
+	}
+
 }

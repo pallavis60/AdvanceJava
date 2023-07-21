@@ -15,5 +15,9 @@ public interface MedicineService {
 	public boolean updateNameAndIdBysideEffect(String name,int rate,String sideEffect);
 	
 	public List<MedicineDto> readAll();
+	
+	public boolean deleteByName(String name);
+	
+	public boolean deleteByNameAndSideEffect(String name, String sideEffect);
 
 }
