@@ -1,4 +1,4 @@
-package com.xworkz.doctor;
+	package com.xworkz.doctor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -46,6 +46,7 @@ public class DoctorRunner {
 		// EntityTransaction trans = em.getTransaction();
 		// trans.begin();
 		// em.remove(em.getReference(DoctorDto.class, 2));
+		 //em.remove(em.find(DoctorDto.class, 2));
 		// trans.commit();
 		// em.close();
 		
